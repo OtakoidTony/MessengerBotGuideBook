@@ -271,12 +271,13 @@ var msgDict = {
 
 function response(room, msg, sender, isGroupChat, replier, ImageDB, packageName, threadId){
     var probability = java.lang.Math.random() * 100;
-    if (probability >= 70){
+    if (probability <= 70){
         if (msg in msgDict){
             replier.reply(randomItem(msgDict[msg]));
         }
     }
 }
 \end{lstlisting}
-가나다
+이와 같이 작성을 하면, 입력이 들어 올 때마다 응답을 하지 않고 70\%확률로 미리 정한 1차원 배열 중 랜덤으로
+답장을 하게 될 것이다.
 \end{document}
