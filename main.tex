@@ -1,0 +1,282 @@
+%!TEX encoding = UTF-8 Unicode
+\documentclass[10pt,a4paper,final]{book}
+\usepackage[scale=0.75,twoside,bindingoffset=5mm]{geometry}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{kotex}
+
+
+\author{Rojiku, OtakoidTony, Park Hyun}
+\title{Messenger Bot Tutorial}
+\usepackage{minted}
+\usepackage[onehalfspacing]{setspace}
+\setstretch{1.5}
+
+\usepackage{listings}
+
+\usepackage{color}
+\definecolor{lightgray}{rgb}{.9,.9,.9}
+\definecolor{darkgray}{rgb}{.4,.4,.4}
+\definecolor{purple}{rgb}{0.65, 0.12, 0.82}
+
+\lstdefinelanguage{JavaScript}{
+  keywords = {
+      typeof, const, new, true,
+      false, catch, function, return,
+      null, catch, switch, var, if, in,
+      while, do, else, case, break
+  },
+  keywordstyle=\color{blue}\bfseries,
+  ndkeywords={class, export, boolean, throw, implements, import, this},
+  ndkeywordstyle=\color{darkgray}\bfseries,
+  identifierstyle=\color{black},
+  sensitive=false,
+  comment=[l]{//},
+  morecomment=[s]{/*}{*/},
+  commentstyle=\color{purple}\ttfamily,
+  stringstyle=\color{black}\ttfamily,
+  morestring=[b]',
+  morestring=[b]"
+}
+
+\lstset{
+   language=JavaScript,
+   backgroundcolor=\color{lightgray},
+   extendedchars=true,
+   basicstyle=\footnotesize\ttfamily\setstretch{1},
+   showstringspaces=false,
+   showspaces=false,
+   numbers=left,
+   numberstyle=\footnotesize,
+   numbersep=9pt,
+   tabsize=2,
+   breaklines=true,
+   showtabs=false,
+   captionpos=b
+}
+
+\begin{document}
+\maketitle
+Tutorials based on AutoReplyBot using javascript.
+\chapter{}
+\section{Setup}
+챗봇을 작성하기에 앞서 구글 플레이스토어에서 아래 나열한 어플리케이션을 모두 설치를 하여라.
+만약에 휴대폰 운영체제가 Android계열이 아닌 경우에는 컴퓨터를 이용해 Android을 실행하여 
+챗봇을 구현할 수 있다. 컴퓨터가 만일 Odroid를 사용중이라면 스마트폰처럼 사용하여도 문제는
+없다.
+
+\setstretch{1}
+\begin{description}
+\item[MessengerBot]\hfill\\
+com.xfl.kakaotalkbot
+\item[Wear OS by Google]\hfill\\
+com.google.android.wearable.app
+\end{description}
+\setstretch{1.5}
+두 어플리케이션의 관계에 대해 설명하자면 MessengerBot에서 
+Wear OS by Google을 이용해 메신저에 접근하는 관계라 할 수 있으리라.
+독자도 알다시피 Wear OS by Google라는 어플리케이션은 스마트폰의 알림을
+Wearable Device에 전송하는 기능과 스마트폰 대신 Wearable Device만을
+이용해 메신저에 답장을 보내는 기능이 탑재되어 있다.
+이를 이용하여 MessengerBot에서 Wear OS by Google를 이용해 자동응답을
+할 수 있도록 구현한 것이다. 두 어플리케이션에 관한 설명은 차후 이어서 하도록 하고,
+만약에 두 어플리케이션 모두 설치를 하였다면, 손 아이콘을 눌러 알림권한설정에서 앞에서 설치한
+MessengerBot과 Wear OS by Google를 활성화를 하여라. 이걸로 준비 작업을 마친다.
+
+\section{Make your script}
+준비 작업을 마친 후, 우측 하단의 십자버튼을 누르고 독자가 원하는 스크립트 이름을 정하여라.
+저자의 경우 'normal'이라고 정하였다.
+아래 소스는 스크립트를 처음 작성할 때 자동으로 생성되는 스크립트이며,
+본 책에서는 여러 이유로 주석을 제거한 상태이다.
+
+\begin{lstlisting}[language=JavaScript,escapeinside=~~,caption={normal.js}]
+const scriptName="normal.js";
+
+function response(room, msg, sender, isGroupChat, replier, ImageDB, packageName, threadId){
+
+}
+
+function onStartCompile(){
+    
+}
+
+function onCreate(savedInstanceState,activity) {
+    var layout=new android.widget.LinearLayout(activity);
+    layout.setOrientation(android.widget.LinearLayout.HORIZONTAL);
+    var txt=new android.widget.TextView(activity);
+    txt.setText("~\textcolor{black}{액티비티 사용 예시입니다.}~");
+    layout.addView(txt);
+    activity.setContentView(layout);
+}
+function onResume(activity) {}
+function onPause(activity) {}
+function onStop(activity) {}
+\end{lstlisting}
+
+우리는 개발을 그렇게 깊게 하지는 않을 것이기 때문에 몇 줄을 삭제하고자 한다.
+내가 챗봇을 개발할 때는 자동으로 작성된 함수 중에서는 오직 response()함수만을 이용했다.
+
+\begin{lstlisting}[language=JavaScript,escapeinside=~~]
+function response(room, msg, sender, isGroupChat, replier, ImageDB, packageName, threadId){
+    
+}
+\end{lstlisting}
+
+이제 한결 나아진 것 같다. 이제, Hello World! 예제를 작성해보자.
+
+\section{Hello World!}
+\begin{lstlisting}[language=JavaScript,escapeinside=~~]
+function response(room, msg, sender, isGroupChat, replier, ImageDB, packageName, threadId){
+    replier.reply("Hello World!")
+}
+\end{lstlisting}
+위와 같이 작성한 다음, 컴파일을 하여라.
+컴파일은 저장버튼을 길게 누르면 할 수 있으며, 다른 방법으로는
+스크립트가 나열된 메인화면에서 새로고침버튼을 누르면 컴파일할 수 있다.
+컴파일을 하였으면, 메인화면으로 나와 벌레버튼을 눌러 Debug Room으로 진입하여라.
+우선은, Debug Room에서 정상적으로 작동하는지를 살펴볼 것이다.
+Debug Room에 진입하였으면 아무 말이나 입력하고 반응을 살펴보자.
+그러면, 독자가 무엇을 입력하든간에 "Hello World!"라고만 응답하는 것을 볼 수 있을 것이다.
+아직까지는 기능이 없는데다가 누가 무슨 말을 하든간에 "Hello World!"라고 메시지를 전송하는
+문제가 다분한 챗봇이다. 따라서 이 봇이 특정 키워드에만 반응을 하도록 수정을 해야한다. 
+어떻게 하면 특정 키워드에만 챗봇이 작동할 수 있을까?
+이에 대해서 다음 장에서 설명하고자 한다.
+\chapter{}
+\section{Specifical Replication}
+우리는 앞에서 챗봇이 무슨 말을 하든간에 "Hello World!"라고 메시지를 전송하는
+문제를 마주하였다. 하지만, 이는 if문이라는 것을 이용하여 쉽게 해결할 수 있다.
+if문은 매우 많이 사용되기에 반드시 알아야하는 구문 중 하나이다.
+다음은 if문을 이용한 매우 간단한 예시이다.
+\begin{lstlisting}[language=JavaScript,escapeinside=~~]
+if (true) {
+    print("Hello World!");
+}
+\end{lstlisting}
+이것 뿐이다. 조건이 참(true)이기 때문에 당연히 Hello World!를 출력할 것이다.
+이를 이용하여 우리는 위에서의 문제를 해결할 수 있다.
+다음 따라오는 스크립트를 따라해보자.
+\begin{lstlisting}[language=JavaScript,escapeinside=~~]
+function response(room, msg, sender, isGroupChat, replier, ImageDB, packageName, threadId){
+    if (msg=='Hello'){
+        replier.reply("Hello! Nice to meet you!");
+    }
+}
+\end{lstlisting}
+그러면, 발신자가 오직 'Hello'라고 발신하였을 때만, 챗봇은 'Hello! Nice to meet you!'
+라고 답장할 것이다. 이와 같이 조건문을 사용하여 발생할 수 있는 상황에 대해 꾸준히 작성하면
+챗봇도 같이 점차 적절한 발화를 할 수 있게 될 것 이다. 이 책에서는 조건문에 대해서 따로 구문을
+설명하지는 않으니, 이 책에서 나와있는 예제들을 통해 몸으로 익히도록 하자. 물론, 따로 프로그래밍
+관련 서적을 참고하는 것도 매우 좋다. 아니, Best다!
+
+\section{Long Scripts Problem}
+조건문을 이용하여 열심히 챗봇을 개선해 나가다 보면 다음과 같은 코드를 만나기 십상이다.
+\begin{lstlisting}[language=JavaScript,escapeinside=~~]
+function response(room, msg, sender, isGroupChat, replier, ImageDB, packageName, threadId){
+    if (msg=='Hello'){
+        replier.reply("Hello! Nice to meet you!");
+    }
+    if (msg=='loli is'){
+        replier.reply("LIFE!!!");
+    }
+    if (msg=='XD'){
+        replier.reply("lol");
+    }
+}
+\end{lstlisting}
+단지 3가지 경우에 적절히 응답하도록 만든 간단한 챗봇임에도 불구하고 11줄이나 차지하는
+너무 더럽다고 해도 과언이 아닌 스크립트가 되어 있다. 하지만, 자바스크립트에서는 파이썬과는 달리
+줄에 대해서 관대하기에 다음과 같이 쓸 수도 있다.
+\begin{lstlisting}[language=JavaScript,escapeinside=~~]
+function response(room, msg, sender, isGroupChat, replier, ImageDB, packageName, threadId){
+    if (msg=='Hello'  ){replier.reply("Hello! Nice to meet you!");}
+    if (msg=='loli is'){replier.reply("LIFE!!!");}
+    if (msg=='XD'     ){replier.reply("lol");}
+}
+\end{lstlisting}
+위와 같이 작성하면 5줄만으로도 작성할 수 있다. 그러나, 컴퓨터에서는 사실상 같은 스크립트일 것이며, 이 스크립트 또한
+응답할 상황이 많아지면 많아질 수록 스크립트의 내용은 방대해 질 것 이다. 이를 해결하기 위해서는
+어떻게 작성을 하면 좋을까? 이에 대한 답은 객체(혹은 딕셔너리)를 이용하는 것이다.
+\begin{lstlisting}[language=JavaScript,escapeinside=~~]
+var msgDict = {'Hello': "Hello World!", 'loli is': "LIFE!!!", 'XD': "lol"};
+function response(room, msg, sender, isGroupChat, replier, ImageDB, packageName, threadId){
+    if (msg in msgDict){
+        replier.reply(msgDict[msg]);
+    }
+}
+\end{lstlisting}
+물론 독자가 Switch문에 대해서 알고 있다면, 다음과 같이 작성할 수는 있다.
+\begin{lstlisting}[language=JavaScript,escapeinside=~~]
+function response(room, msg, sender, isGroupChat, replier, ImageDB, packageName, threadId){
+    switch(msg){
+        case 'Hello' :
+            replier.reply("Hello! Nice to meet you!");
+            break;
+        case 'loli is' :
+            replier.reply("LIFE!!!");
+            break;
+        case 'XD' :
+            replier.reply("lol");
+            break;
+    }
+}
+\end{lstlisting}
+음... 그냥 객체를 이용하자.
+객체에 대한 내용은 차후에 다시 언급될 것이고 무엇보다 매우 편리한 것이니 반드시 숙지해두자!
+이것으로 단순한 자동응답 챗봇은 구현할 수 있게 되었다.
+이제 본격적으로 챗봇을 개발해보자! 다음 챕터부터는 챗봇에 여러 기능을 추가하게 될 것이다.
+
+\chapter{}
+
+\section{Random Replication}
+
+만약에 발신자가 '뭐임'라고 할 때마다 '글쎄'라고 챗봇이 답장을 하게 되면, 답장자가 챗봇이라는
+느낌을 강하게 받을 뿐만 아니라 if문에 대해서 알고 있는 발신자 또한 개발자라면, 바로 if문을
+이용해 구현했다는 것을 알아낼 것이고 너무 무분별한 답장기능은 때로는 특정 채팅방으로부터 강퇴
+사유가 되기도 한다. 따라서 각 상황별 여러가지 답장을 할 수 있도록 구현해야 한다. 이 때 사용되는
+것이 바로 Math라는 라이브러리이다. 맞다. 독자가 매우 싫어하는 과목, 그 Math이다. 물론, 수학을
+보고 흥분하는 변태일 가능성도 있긴 하다. 어찌됬든, 이상한 소리는 여기까지하고 하던 말을 이어가자면
+Math라는 라이브러리에는 당연히 수학에 관한 함수나 여러 기능이 포함되어 있는데 이를 이용하여
+챗봇이 랜덤하게 답장을 하도록 구현할 것이다.
+우선 $\texttt{java.lang.Math.random()}$라는 함수는 0부터 1사이에서의 랜덤한 수를 제공한다.
+이 기능은 공학용 계산기에서의 $\texttt{Ran}\sharp$ 과 동일하다.
+이를 이용하여 1차원 배열에서 랜덤한 성분을 뽑아내는 함수를 다음과 같이 구현할 수 있다.
+\begin{lstlisting}[language=JavaScript,escapeinside=~~, caption={$\texttt{randomItem(array)}$}]
+function randomItem(a) {
+    return a[java.lang.Math.floor(java.lang.Math.random() * a.length)];
+}
+\end{lstlisting}
+이제 다음과 같이 작성하자.
+\begin{lstlisting}[language=JavaScript,escapeinside=@@]
+function randomItem(a) {
+    return a[java.lang.Math.floor(java.lang.Math.random() * a.length)];
+}
+var msgDict = {
+    @'안녕하세요'@: [
+        @"안녕하세여$\sim$!",@
+        @"어서와여$\sim$!",@
+        @"안녕$\sim$ 이에여$\sim$!"@
+    ],
+    @'냥!':@ [
+        @"냐아앙$\sim$!",@
+        @"냥$\sim$! 냥$\sim$!",@
+        @"냐아$\sim$!"@
+    ],
+    @'박제':@ [
+        @"어휴;;;",@
+        @"증! 거! 확! 보!"@
+    ]
+};
+
+function response(room, msg, sender, isGroupChat, replier, ImageDB, packageName, threadId){
+    var probability = java.lang.Math.random() * 100;
+    if (probability >= 70){
+        if (msg in msgDict){
+            replier.reply(randomItem(msgDict[msg]));
+        }
+    }
+}
+\end{lstlisting}
+가나다
+\end{document}
