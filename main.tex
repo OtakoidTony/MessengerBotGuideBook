@@ -7,6 +7,7 @@
 \usepackage{graphicx}
 \usepackage{kotex}
 
+\usepackage{tascmac}
 
 \author{Rojiku, OtakoidTony, Park Hyun}
 \title{Messenger Bot Tutorial}
@@ -226,6 +227,14 @@ function response(room, msg, sender, isGroupChat, replier, ImageDB, packageName,
 객체에 대한 내용은 차후에 다시 언급될 것이고 무엇보다 매우 편리한 것이니 반드시 숙지해두자!
 이것으로 단순한 자동응답 챗봇은 구현할 수 있게 되었다.
 이제 본격적으로 챗봇을 개발해보자! 다음 챕터부터는 챗봇에 여러 기능을 추가하게 될 것이다.
+\\
+\\
+\\
+\begin{screen}
+혹시나 한시라도 빨리 챗봇을 만들어 실행시켜보고 싶은 독자를 위해 실행하는 방법을 적어보자면,
+메인화면에서 해당 스크립트에 토글 스위치를 누르고 메인화면 상단에 있는 토글 스위치를 눌러
+활성화하면 해당 스크립트를 활성화할 수 있다. 단, 메신저를 사용 중일 때는 자동응답을 할 수 없다.
+\end{screen}
 
 \chapter{}
 
@@ -248,7 +257,7 @@ function randomItem(a) {
 }
 \end{lstlisting}
 이제 다음과 같이 작성하자.
-\begin{lstlisting}[language=JavaScript,escapeinside=@@]
+\begin{lstlisting}[language=JavaScript,escapeinside=@@, caption={RandomReply.js}]
 function randomItem(a) {
     return a[java.lang.Math.floor(java.lang.Math.random() * a.length)];
 }
@@ -279,5 +288,75 @@ function response(room, msg, sender, isGroupChat, replier, ImageDB, packageName,
 }
 \end{lstlisting}
 이와 같이 작성을 하면, 입력이 들어 올 때마다 응답을 하지 않고 70\%확률로 미리 정한 1차원 배열 중 랜덤으로
-답장을 하게 될 것이다.
+답장을 하게 될 것이다. 우선 $\texttt{msgDict}$라는 객체를 선언한 것에 대해 설명을 하자면
+$\texttt{msgDict}$는 객체(혹은 딕셔너리)이므로 $\texttt{msgDict['박제']}$ 처럼 사용할 수 있으며 이 때 해당하는 값은 크기가 2인 1차원 배열,
+["어휴;;;", "증! 거! 확! 보!"]가 될 것이다. 이것만으로는 설명이 매우 부족한 관계로 위 스크립트를 분석해보자.
+\begin{lstlisting}[language=JavaScript,escapeinside=@@]
+function response(room, msg, sender, isGroupChat, replier, ImageDB, packageName, threadId){
+    var probability = java.lang.Math.random() * 100;
+    if (probability <= 70){
+        if (msg in msgDict){
+            replier.reply(randomItem(msgDict[msg]));
+        }
+    }
+}
+\end{lstlisting}
+무엇이 되었든간에 챗봇에 있어서 메인이 되는 함수는 위 함수, $\texttt{response()}$일 것이다. 우선, 발신자가 '안녕하세요'
+라고 보냈다고 가정하자. 그러면 $\texttt{msg = '안녕하세요'}$일 것이다. 이제 계속해서 $\texttt{response()}$내부에 선언된
+변수 $\texttt{probability}$에 대해서 살펴보면 $\texttt{probability = java.lang.Math.random() * 100}$ 이다.
+이 때, $\texttt{java.lang.Math.random()}$의 값이 0.26886278881818315가 나왔다고 하자. 그러면
+이 때는(왜냐하면 random()은 매 호출시마다 값이 바뀌기 때문이다.) $\texttt{probability}$의 값은
+대략 26.xx일 것이다. 따라서 $\texttt{probability <= 70}$의 값은 $\texttt{true}$이며 그러므로 다음 절차를 밟게 될 것이다.
+\begin{lstlisting}[language=JavaScript,escapeinside=@@]
+if (msg in msgDict){
+    replier.reply(randomItem(msgDict[msg]));
+}
+\end{lstlisting}
+이제 $\texttt{msg \textcolor{blue}{in} msgDict}$의 값을 알아보자면, 결론적으로는 $\texttt{true}$이다.
+그 이유는 앞에서 선언한 $\texttt{msgDict}$에 $\texttt{'안녕하세요'}$ 라는 값이 존재하기 때문이다.
+마찬가지로 msg='냥!' 이었으면, 이 때도 동일하게 true이다. 반대로 msg='안녕' 인 경우에 $\texttt{msg \textcolor{blue}{in} msgDict}$의 값은 false이다.
+\begin{lstlisting}[language=JavaScript,escapeinside=@@, caption={$\texttt{msgDict}$}]
+var msgDict = {
+    @\textbf{'안녕하세요'}@: [
+        @"안녕하세여$\sim$!",@
+        @"어서와여$\sim$!",@
+        @"안녕$\sim$ 이에여$\sim$!"@
+    ],
+    @'냥!':@ [
+        @"냐아앙$\sim$!",@
+        @"냥$\sim$! 냥$\sim$!",@
+        @"냐아$\sim$!"@
+    ],
+    @'박제':@ [
+        @"어휴;;;",@
+        @"증! 거! 확! 보!"@
+    ]
+};
+\end{lstlisting}
+이제 if문에서 조건이 참임을 알았으니, 이제 안에 작성된 내용을 수행하는 것만 관찰하면 된다.
+\begin{lstlisting}[language=JavaScript,escapeinside=@@]
+replier.reply(randomItem(msgDict[msg]));
+\end{lstlisting}
+msg='안녕하세요' 이므로 $\texttt{msgDict}$=$\texttt{msgDict}$['안녕하세요']이라 할 수 있다.
+따라서 $\texttt{msgDict[msg]}$의 값은 크기가 3인 배열, ["안녕하세여$\sim$!", "어서와여$\sim$!", "안녕$\sim$ 이에여$\sim$!"]
+이다.
+그렇다면 도대체 $\texttt{randomItem(msgDict[msg])}$의 값이 무엇일까? 다시 위에서 정의했던 $\texttt{randomItem()}$을 살펴보자.
+\begin{lstlisting}[language=JavaScript,escapeinside=~~, caption={$\texttt{randomItem(array)}$}]
+function randomItem(a) {
+    return a[java.lang.Math.floor(java.lang.Math.random() * a.length)];
+}
+\end{lstlisting}
+혹시나 $\texttt{java.lang.Math.floor(x)}$에 대해 궁금할 독자를 위해 설명하자면 다음과 같다.
+\[
+\begin{matrix}
+\texttt{java.lang.Math.floor(}x\texttt{)} &=& \lfloor x\rfloor &=& [x]\\
+       &=& \max\{n\in \mathbb {Z} \colon n\leq x\} &=& \text{int}(x)
+\end{matrix}
+\]
+$\texttt{randomItem(array)}$를 살펴보면, $\texttt{array}$의 원소 중 \texttt{floor[random()$\times$a.length]+1}번째 원소를
+내보낸다는 것을 알 수 있다. 따라서 $\texttt{randomItem(msgDict[msg])}$의 값은 $\texttt{msgDict[msg]}$의 원소 중
+하나일 것이며, 그 값 또한 매 호출시마다 바뀔 것이다. 물론, 이 때도 $\texttt{msgDict[msg]}$의 원소 중 하나이다. 본 스크립트는 이제
+어느정도 살펴본 것 같으니 여기서 Random Replication 섹션를 마치도록 하겠다.
+\section{Calculator}
+이번에는 \texttt{eval()}함수를 이용하여 계산기를 만들어 보고자 한다.
 \end{document}

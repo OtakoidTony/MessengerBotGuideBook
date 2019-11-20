@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6840 64-bit) (preloaded format=pdflatex 2018.10.18)  19 NOV 2019 17:09
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6840 64-bit) (preloaded format=pdflatex 2018.10.18)  20 NOV 2019 15:09
 entering extended mode
 **./main.tex
 (main.tex
@@ -213,6 +213,26 @@ File: lucenc.dfu 2007/09/05 UTF-8 support for dhucs
 ("C:\Program Files\MiKTeX 2.9\tex\latex\cjk-ko\kolabels-utf.sty"
 Package: kolabels-utf 2015/03/20 v1.5 UTF-8 Hangul item labels
 )))
+("C:\Program Files\MiKTeX 2.9\tex\latex\ascmac\tascmac.sty"
+Package: tascmac 2018/03/09 v2.0h ascmac package (community edition) 
+Package tascmac Info: Assuming pdfLaTeX, XeLaTeX or LuaLaTeX on input line 44.
+{C:/Users/toshi/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}
+\scb@x=\box28
+\scscb@x=\box29
+\@bw=\dimen123
+\@nbox=\box30
+\@nbody=\box31
+\@scw=\dimen124
+\ascmac@hoboxa=\box32
+\ascmac@hoboxb=\box33
+\@itemh=\dimen125
+\@iboxpos=\toks24
+\@iboxstr=\box34
+\@bwsp=\box35
+\@@bwsp=\box36
+\@bcal=\count106
+\shaderule=\dimen126
+)
 ("C:\Program Files\MiKTeX 2.9\tex\latex\minted\minted.sty"
 Package: minted 2017/07/19 v2.5 Yet another Pygments shim for LaTeX
 
@@ -248,17 +268,17 @@ Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
 )
 ("C:\Program Files\MiKTeX 2.9\tex\latex\etoolbox\etoolbox.sty"
 Package: etoolbox 2018/08/19 v2.5f e-TeX tools for LaTeX (JAW)
-\etb@tempcnta=\count106
+\etb@tempcnta=\count107
 )
 ("C:\Program Files\MiKTeX 2.9\tex\latex\fancyvrb\fancyvrb.sty"
 Package: fancyvrb 2019/01/15
 
 Style option: `fancyvrb' v3.2a <2019/01/15> (tvz)
-\FV@CodeLineNo=\count107
+\FV@CodeLineNo=\count108
 \FV@InFile=\read1
-\FV@TabBox=\box28
-\c@FancyVerbLine=\count108
-\FV@StepNumber=\count109
+\FV@TabBox=\box37
+\c@FancyVerbLine=\count109
+\FV@StepNumber=\count110
 \FV@OutFile=\write3
 )
 ("C:\Program Files\MiKTeX 2.9\tex\latex\upquote\upquote.sty"
@@ -267,56 +287,56 @@ tim
 )
 ("C:\Program Files\MiKTeX 2.9\tex\latex\lineno\lineno.sty"
 Package: lineno 2005/11/02 line numbers on paragraphs v4.41
-\linenopenalty=\count110
-\output=\toks24
-\linenoprevgraf=\count111
-\linenumbersep=\dimen123
-\linenumberwidth=\dimen124
-\c@linenumber=\count112
-\c@pagewiselinenumber=\count113
-\c@LN@truepage=\count114
-\c@internallinenumber=\count115
-\c@internallinenumbers=\count116
-\quotelinenumbersep=\dimen125
-\bframerule=\dimen126
-\bframesep=\dimen127
-\bframebox=\box29
+\linenopenalty=\count111
+\output=\toks25
+\linenoprevgraf=\count112
+\linenumbersep=\dimen127
+\linenumberwidth=\dimen128
+\c@linenumber=\count113
+\c@pagewiselinenumber=\count114
+\c@LN@truepage=\count115
+\c@internallinenumber=\count116
+\c@internallinenumbers=\count117
+\quotelinenumbersep=\dimen129
+\bframerule=\dimen130
+\bframesep=\dimen131
+\bframebox=\box38
 LaTeX Info: Redefining \\ on input line 3056.
 )
-\c@FV@TrueTabGroupLevel=\count117
-\c@FV@TrueTabCounter=\count118
-\FV@TabBox@Group=\box30
+\c@FV@TrueTabGroupLevel=\count118
+\c@FV@TrueTabCounter=\count119
+\FV@TabBox@Group=\box39
 \FV@TmpLength=\skip46
-\c@FV@HighlightLinesStart=\count119
-\c@FV@HighlightLinesStop=\count120
-\FV@LoopCount=\count121
-\FV@NCharsBox=\box31
-\FV@BreakIndent=\dimen128
-\FV@BreakIndentNChars=\count122
-\FV@BreakSymbolSepLeft=\dimen129
-\FV@BreakSymbolSepLeftNChars=\count123
-\FV@BreakSymbolSepRight=\dimen130
-\FV@BreakSymbolSepRightNChars=\count124
-\FV@BreakSymbolIndentLeft=\dimen131
-\FV@BreakSymbolIndentLeftNChars=\count125
-\FV@BreakSymbolIndentRight=\dimen132
-\FV@BreakSymbolIndentRightNChars=\count126
-\c@FancyVerbLineBreakLast=\count127
-\FV@LineBox=\box32
-\FV@LineIndentBox=\box33
-\FV@LineWidth=\dimen133
+\c@FV@HighlightLinesStart=\count120
+\c@FV@HighlightLinesStop=\count121
+\FV@LoopCount=\count122
+\FV@NCharsBox=\box40
+\FV@BreakIndent=\dimen132
+\FV@BreakIndentNChars=\count123
+\FV@BreakSymbolSepLeft=\dimen133
+\FV@BreakSymbolSepLeftNChars=\count124
+\FV@BreakSymbolSepRight=\dimen134
+\FV@BreakSymbolSepRightNChars=\count125
+\FV@BreakSymbolIndentLeft=\dimen135
+\FV@BreakSymbolIndentLeftNChars=\count126
+\FV@BreakSymbolIndentRight=\dimen136
+\FV@BreakSymbolIndentRightNChars=\count127
+\c@FancyVerbLineBreakLast=\count128
+\FV@LineBox=\box41
+\FV@LineIndentBox=\box42
+\FV@LineWidth=\dimen137
 )
 ("C:\Program Files\MiKTeX 2.9\tex\latex\tools\calc.sty"
 Package: calc 2017/05/25 v4.3 Infix arithmetic (KKT,FJ)
-\calc@Acount=\count128
-\calc@Bcount=\count129
-\calc@Adimen=\dimen134
-\calc@Bdimen=\dimen135
+\calc@Acount=\count129
+\calc@Bcount=\count130
+\calc@Adimen=\dimen138
+\calc@Bdimen=\dimen139
 \calc@Askip=\skip47
 \calc@Bskip=\skip48
 LaTeX Info: Redefining \setlength on input line 80.
 LaTeX Info: Redefining \addtolength on input line 81.
-\calc@Ccount=\count130
+\calc@Ccount=\count131
 \calc@Cskip=\skip49
 )
 ("C:\Program Files\MiKTeX 2.9\tex\latex\tools\shellesc.sty"
@@ -340,34 +360,34 @@ Package: catchfile 2016/05/16 v1.7 Catch the contents of a file (HO)
 ("C:\Program Files\MiKTeX 2.9\tex\latex\xstring\xstring.sty"
 ("C:\Program Files\MiKTeX 2.9\tex\generic\xstring\xstring.tex"
 \@xs@message=\write4
-\integerpart=\count131
-\decimalpart=\count132
+\integerpart=\count132
+\decimalpart=\count133
 )
 Package: xstring 2013/10/13  v1.7c  String manipulations (C Tellechea)
 )
 ("C:\Program Files\MiKTeX 2.9\tex\latex\framed\framed.sty"
 Package: framed 2011/10/22 v 0.96: framed or shaded text with page breaks
 \OuterFrameSep=\skip50
-\fb@frw=\dimen136
-\fb@frh=\dimen137
-\FrameRule=\dimen138
-\FrameSep=\dimen139
+\fb@frw=\dimen140
+\fb@frh=\dimen141
+\FrameRule=\dimen142
+\FrameSep=\dimen143
 )
 ("C:\Program Files\MiKTeX 2.9\tex\latex\float\float.sty"
 Package: float 2001/11/08 v1.3d Float enhancements (AL)
-\c@float@type=\count133
-\float@exts=\toks25
-\float@box=\box34
-\@float@everytoks=\toks26
-\@floatcapt=\box35
+\c@float@type=\count134
+\float@exts=\toks26
+\float@box=\box43
+\@float@everytoks=\toks27
+\@floatcapt=\box44
 )
 \minted@appexistsfile=\read2
-\minted@bgbox=\box36
+\minted@bgbox=\box45
 \minted@code=\write5
-\c@minted@FancyVerbLineTemp=\count134
-\c@minted@pygmentizecounter=\count135
-\@float@every@listing=\toks27
-\c@listing=\count136
+\c@minted@FancyVerbLineTemp=\count135
+\c@minted@pygmentizecounter=\count136
+\@float@every@listing=\toks28
+\c@listing=\count137
 )
 runsystem(if not exist _minted-main mkdir _minted-main)...executed.
 
@@ -376,24 +396,24 @@ runsystem(if not exist _minted-main mkdir _minted-main)...executed.
 Package: setspace 2011/12/19 v6.7a set line spacing
 )
 ("C:\Program Files\MiKTeX 2.9\tex\latex\listings\listings.sty"
-\lst@mode=\count137
-\lst@gtempboxa=\box37
-\lst@token=\toks28
-\lst@length=\count138
-\lst@currlwidth=\dimen140
-\lst@column=\count139
-\lst@pos=\count140
-\lst@lostspace=\dimen141
-\lst@width=\dimen142
-\lst@newlines=\count141
-\lst@lineno=\count142
-\lst@maxwidth=\dimen143
+\lst@mode=\count138
+\lst@gtempboxa=\box46
+\lst@token=\toks29
+\lst@length=\count139
+\lst@currlwidth=\dimen144
+\lst@column=\count140
+\lst@pos=\count141
+\lst@lostspace=\dimen145
+\lst@width=\dimen146
+\lst@newlines=\count142
+\lst@lineno=\count143
+\lst@maxwidth=\dimen147
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\listings\lstmisc.sty"
 File: lstmisc.sty 2019/09/10 1.8c (Carsten Heinz)
-\c@lstnumber=\count143
-\lst@skipnumbers=\count144
-\lst@framebox=\box38
+\c@lstnumber=\count144
+\lst@skipnumbers=\count145
+\lst@framebox=\box47
 )
 ("C:\Program Files\MiKTeX 2.9\tex\latex\listings\listings.cfg"
 File: listings.cfg 2019/09/10 1.8c listings configuration
@@ -416,26 +436,26 @@ runsystem(del main.aex)...executed.
  (main.aux)
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 60.
-LaTeX Font Info:    ... okay on input line 60.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 60.
-LaTeX Font Info:    ... okay on input line 60.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 60.
-LaTeX Font Info:    ... okay on input line 60.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 60.
-LaTeX Font Info:    ... okay on input line 60.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 60.
-LaTeX Font Info:    ... okay on input line 60.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 60.
-LaTeX Font Info:    ... okay on input line 60.
-LaTeX Font Info:    Checking defaults for LUC/nanummj/m/n on input line 60.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 61.
+LaTeX Font Info:    ... okay on input line 61.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 61.
+LaTeX Font Info:    ... okay on input line 61.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 61.
+LaTeX Font Info:    ... okay on input line 61.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 61.
+LaTeX Font Info:    ... okay on input line 61.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 61.
+LaTeX Font Info:    ... okay on input line 61.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 61.
+LaTeX Font Info:    ... okay on input line 61.
+LaTeX Font Info:    Checking defaults for LUC/nanummj/m/n on input line 61.
 LaTeX Font Info:    Try loading font information for LUC+nanummj on input line 
-60.
+61.
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\nanumtype1\lucnanummj.fd"
 File: lucnanummj.fd 2013/02/12 v0.1 Nanum Myeongjo font definitions
 )
-LaTeX Font Info:    ... okay on input line 60.
+LaTeX Font Info:    ... okay on input line 61.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -474,17 +494,17 @@ LaTeX Font Info:    ... okay on input line 60.
 
 ("C:\Program Files\MiKTeX 2.9\tex\context\base\supp-pdf.mkii"
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count145
-\scratchdimen=\dimen144
-\scratchbox=\box39
-\nofMPsegments=\count146
-\nofMParguments=\count147
-\everyMPshowfont=\toks29
-\MPscratchCnt=\count148
-\MPscratchDim=\dimen145
-\MPnumerator=\count149
-\makeMPintoPDFobject=\count150
-\everyMPtoPDFconversion=\toks30
+\scratchcounter=\count146
+\scratchdimen=\dimen148
+\scratchbox=\box48
+\nofMPsegments=\count147
+\nofMParguments=\count148
+\everyMPshowfont=\toks30
+\MPscratchCnt=\count149
+\MPscratchDim=\dimen149
+\MPnumerator=\count150
+\makeMPintoPDFobject=\count151
+\everyMPtoPDFconversion=\toks31
 ) ("C:\Program Files\MiKTeX 2.9\tex\latex\oberdiek\epstopdf-base.sty"
 Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
 
@@ -658,122 +678,153 @@ Package textcomp Info: Setting pplj sub-encoding to TS1/3 on input line 407.
 Package textcomp Info: Setting ptmx sub-encoding to TS1/4 on input line 408.
 Package textcomp Info: Setting ptmj sub-encoding to TS1/4 on input line 409.
 )
-\c@lstlisting=\count151
-LaTeX Font Info:    Try loading font information for U+msa on input line 61.
+\c@lstlisting=\count152
+LaTeX Font Info:    Try loading font information for U+msa on input line 62.
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\umsa.fd"
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 61.
+LaTeX Font Info:    Try loading font information for U+msb on input line 62.
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\umsb.fd"
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) [1
 
 
-{C:/Users/toshi/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}] [2]
+] [2]
 Chapter 1.
 LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <8> not available
-(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 95.
+(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 96.
 [3
 
 ]
 LaTeX Font Info:    Try loading font information for LUC+nanumgt on input line 
-109.
+110.
  ("C:\Program Files\MiKTeX 2.9\tex\latex\nanumtype1\lucnanumgt.fd"
 File: lucnanumgt.fd 2013/02/12 v0.1 Nanum Gothic font definitions
 ) [4]
 Chapter 2.
-LaTeX Font Info:    Try loading font information for TS1+cmtt on input line 162
+LaTeX Font Info:    Try loading font information for TS1+cmtt on input line 163
 .
 ("C:\Program Files\MiKTeX 2.9\tex\latex\base\ts1cmtt.fd"
 File: ts1cmtt.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 ) [5
 
-] [6]
+]
+Underfull \hbox (badness 10000) in paragraph at lines 226--234
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 226--234
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 226--234
+
+ []
+
+[6]
 Chapter 3.
 [7
 
-] [8] (main.aux) ) 
+]
+Overfull \hbox (1.87614pt too wide) in paragraph at lines 304--310
+\LUC/nanummj/m/n/10/bd €\LUC/nanummj/m/n/10/c5 Ð \LUC/nanummj/m/n/10/c1  \LUC/n
+anummj/m/n/10/c5 ¸\LUC/nanummj/m/n/10/b4  \LUC/nanummj/m/n/10/bc À\LUC/nanummj
+/m/n/10/c2  $[]$\LUC/nanummj/m/n/10/c5 Ð \LUC/nanummj/m/n/10/b3  \LUC/nanummj/
+m/n/10/d5 t\LUC/nanummj/m/n/10/c1  \LUC/nanummj/m/n/10/c0 ´\LUC/nanummj/m/n/10
+/d3 ´\LUC/nanummj/m/n/10/bc ô\LUC/nanummj/m/n/10/ba t $[]$
+ []
+
+[8] [9] (main.aux) ) 
 Here is how much of TeX's memory you used:
- 8398 strings out of 492970
- 135323 string characters out of 3135854
- 335741 words of memory out of 3000000
- 12046 multiletter control sequences out of 15000+200000
- 30775 words of font info for 113 fonts, out of 3000000 for 9000
+ 8503 strings out of 492970
+ 136720 string characters out of 3135854
+ 338138 words of memory out of 3000000
+ 12140 multiletter control sequences out of 15000+200000
+ 38484 words of font info for 140 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 37i,6n,40p,858b,1737s stack positions out of 5000i,500n,10000p,200000b,50000s
- <C:\Users\toshi\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jkn
-appen\ec\dpi600\tctt0800.pk><C:/Program Files/MiKTeX 2.9/fonts/type1/public/ams
-fonts/cm/cmbx10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm
-/cmbx12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.
-pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/P
-rogram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program Fi
-les/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Program Files/MiKTe
-X 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program Files/MiKTeX 2.9/font
-s/type1/public/amsfonts/cm/cmsl10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/
-public/amsfonts/cm/cmsy8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/am
-sfonts/cm/cmtt10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/c
-m/cmtt8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/nanumtype1/nanumgtm
-ac.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/nanumtype1/nanumgtmb0.pf
-b><C:/Program Files/MiKTeX 2.9/fonts/type1/public/nanumtype1/nanumgtmb1.pfb><C:
-/Program Files/MiKTeX 2.9/fonts/type1/public/nanumtype1/nanumgtmb2.pfb><C:/Prog
-ram Files/MiKTeX 2.9/fonts/type1/public/nanumtype1/nanumgtmbc.pfb><C:/Program F
-iles/MiKTeX 2.9/fonts/type1/public/nanumtype1/nanumgtmbe.pfb><C:/Program Files/
-MiKTeX 2.9/fonts/type1/public/nanumtype1/nanumgtmc0.pfb><C:/Program Files/MiKTe
-X 2.9/fonts/type1/public/nanumtype1/nanumgtmc1.pfb><C:/Program Files/MiKTeX 2.9
-/fonts/type1/public/nanumtype1/nanumgtmc2.pfb><C:/Program Files/MiKTeX 2.9/font
-s/type1/public/nanumtype1/nanumgtmc5.pfb><C:/Program Files/MiKTeX 2.9/fonts/typ
-e1/public/nanumtype1/nanumgtmc6.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/pu
-blic/nanumtype1/nanumgtmc7.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/
-nanumtype1/nanumgtmc8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/nanum
-type1/nanumgtmc9.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/nanumtype1
-/nanumgtmd2.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/nanumtype1/nanu
-mgtmd5.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/nanumtype1/nanumgtmd
-6.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/nanumtype1/nanumgtmd7.pfb
-><C:/Program Files/MiKTeX 2.9/fonts/type1/public/nanumtype1/nanummjmac.pfb><C:/
-Program Files/MiKTeX 2.9/fonts/type1/public/nanumtype1/nanummjmad.pfb><C:/Progr
-am Files/MiKTeX 2.9/fonts/type1/public/nanumtype1/nanummjmae.pfb><C:/Program Fi
-les/MiKTeX 2.9/fonts/type1/public/nanumtype1/nanummjmaf.pfb><C:/Program Files/M
-iKTeX 2.9/fonts/type1/public/nanumtype1/nanummjmb0.pfb><C:/Program Files/MiKTeX
- 2.9/fonts/type1/public/nanumtype1/nanummjmb1.pfb><C:/Program Files/MiKTeX 2.9/
-fonts/type1/public/nanumtype1/nanummjmb2.pfb><C:/Program Files/MiKTeX 2.9/fonts
-/type1/public/nanumtype1/nanummjmb3.pfb><C:/Program Files/MiKTeX 2.9/fonts/type
-1/public/nanumtype1/nanummjmb4.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/pub
-lic/nanumtype1/nanummjmb5.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/n
-anumtype1/nanummjmb6.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/nanumt
-ype1/nanummjmb7.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/nanumtype1/
-nanummjmb8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/nanumtype1/nanum
-mjmb9.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/nanumtype1/nanummjmba
-.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/nanumtype1/nanummjmbb.pfb>
-<C:/Program Files/MiKTeX 2.9/fonts/type1/public/nanumtype1/nanummjmbc.pfb><C:/P
-rogram Files/MiKTeX 2.9/fonts/type1/public/nanumtype1/nanummjmbd.pfb><C:/Progra
-m Files/MiKTeX 2.9/fonts/type1/public/nanumtype1/nanummjmbe.pfb><C:/Program Fil
-es/MiKTeX 2.9/fonts/type1/public/nanumtype1/nanummjmbf.pfb><C:/Program Files/Mi
-KTeX 2.9/fonts/type1/public/nanumtype1/nanummjmc0.pfb><C:/Program Files/MiKTeX 
-2.9/fonts/type1/public/nanumtype1/nanummjmc1.pfb><C:/Program Files/MiKTeX 2.9/f
-onts/type1/public/nanumtype1/nanummjmc2.pfb><C:/Program Files/MiKTeX 2.9/fonts/
-type1/public/nanumtype1/nanummjmc3.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1
-/public/nanumtype1/nanummjmc4.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/publ
-ic/nanumtype1/nanummjmc5.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/na
-numtype1/nanummjmc6.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/nanumty
-pe1/nanummjmc7.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/nanumtype1/n
-anummjmc8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/nanumtype1/nanumm
-jmc9.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/nanumtype1/nanummjmcc.
-pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/nanumtype1/nanummjmcd.pfb><
-C:/Program Files/MiKTeX 2.9/fonts/type1/public/nanumtype1/nanummjmce.pfb><C:/Pr
-ogram Files/MiKTeX 2.9/fonts/type1/public/nanumtype1/nanummjmcf.pfb><C:/Program
- Files/MiKTeX 2.9/fonts/type1/public/nanumtype1/nanummjmd0.pfb><C:/Program File
-s/MiKTeX 2.9/fonts/type1/public/nanumtype1/nanummjmd1.pfb><C:/Program Files/MiK
-TeX 2.9/fonts/type1/public/nanumtype1/nanummjmd2.pfb><C:/Program Files/MiKTeX 2
-.9/fonts/type1/public/nanumtype1/nanummjmd3.pfb><C:/Program Files/MiKTeX 2.9/fo
-nts/type1/public/nanumtype1/nanummjmd4.pfb><C:/Program Files/MiKTeX 2.9/fonts/t
-ype1/public/nanumtype1/nanummjmd5.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/
-public/nanumtype1/nanummjmd6.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/publi
-c/nanumtype1/nanummjmd7.pfb>
-Output written on main.pdf (8 pages, 2595648 bytes).
+ 37i,8n,40p,858b,1737s stack positions out of 5000i,500n,10000p,200000b,50000s
+ <C:\Users\toshi\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\j
+knappen\ec\dpi600\tctt0800.pk><C:/Program Files/MiKTeX 2.9/fonts/type1/public/a
+msfonts/cm/cmbx10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/
+cm/cmbx12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi1
+0.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:
+/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program 
+Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Program Files/MiK
+TeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program Files/MiKTeX 2.9/fo
+nts/type1/public/amsfonts/cm/cmsl10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type
+1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public
+/amsfonts/cm/cmsy8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts
+/cm/cmtt10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmtt
+8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/latxfont/lcircle
+1.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/msbm10.p
+fb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/nanumtype1/nanumgtbb1.pfb><C
+:/Program Files/MiKTeX 2.9/fonts/type1/public/nanumtype1/nanumgtbc1.pfb><C:/Pro
+gram Files/MiKTeX 2.9/fonts/type1/public/nanumtype1/nanumgtbc5.pfb><C:/Program 
+Files/MiKTeX 2.9/fonts/type1/public/nanumtype1/nanumgtbc6.pfb><C:/Program Files
+/MiKTeX 2.9/fonts/type1/public/nanumtype1/nanumgtbd5.pfb><C:/Program Files/MiKT
+eX 2.9/fonts/type1/public/nanumtype1/nanumgtmac.pfb><C:/Program Files/MiKTeX 2.
+9/fonts/type1/public/nanumtype1/nanumgtmb0.pfb><C:/Program Files/MiKTeX 2.9/fon
+ts/type1/public/nanumtype1/nanumgtmb1.pfb><C:/Program Files/MiKTeX 2.9/fonts/ty
+pe1/public/nanumtype1/nanumgtmb2.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/p
+ublic/nanumtype1/nanumgtmbc.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public
+/nanumtype1/nanumgtmbe.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/nanu
+mtype1/nanumgtmc0.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/nanumtype
+1/nanumgtmc1.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/nanumtype1/nan
+umgtmc2.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/nanumtype1/nanumgtm
+c5.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/nanumtype1/nanumgtmc6.pf
+b><C:/Program Files/MiKTeX 2.9/fonts/type1/public/nanumtype1/nanumgtmc7.pfb><C:
+/Program Files/MiKTeX 2.9/fonts/type1/public/nanumtype1/nanumgtmc8.pfb><C:/Prog
+ram Files/MiKTeX 2.9/fonts/type1/public/nanumtype1/nanumgtmc9.pfb><C:/Program F
+iles/MiKTeX 2.9/fonts/type1/public/nanumtype1/nanumgtmd2.pfb><C:/Program Files/
+MiKTeX 2.9/fonts/type1/public/nanumtype1/nanumgtmd5.pfb><C:/Program Files/MiKTe
+X 2.9/fonts/type1/public/nanumtype1/nanumgtmd6.pfb><C:/Program Files/MiKTeX 2.9
+/fonts/type1/public/nanumtype1/nanumgtmd7.pfb><C:/Program Files/MiKTeX 2.9/font
+s/type1/public/nanumtype1/nanummjmac.pfb><C:/Program Files/MiKTeX 2.9/fonts/typ
+e1/public/nanumtype1/nanummjmad.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/pu
+blic/nanumtype1/nanummjmae.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/
+nanumtype1/nanummjmaf.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/nanum
+type1/nanummjmb0.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/nanumtype1
+/nanummjmb1.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/nanumtype1/nanu
+mmjmb2.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/nanumtype1/nanummjmb
+3.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/nanumtype1/nanummjmb4.pfb
+><C:/Program Files/MiKTeX 2.9/fonts/type1/public/nanumtype1/nanummjmb5.pfb><C:/
+Program Files/MiKTeX 2.9/fonts/type1/public/nanumtype1/nanummjmb6.pfb><C:/Progr
+am Files/MiKTeX 2.9/fonts/type1/public/nanumtype1/nanummjmb7.pfb><C:/Program Fi
+les/MiKTeX 2.9/fonts/type1/public/nanumtype1/nanummjmb8.pfb><C:/Program Files/M
+iKTeX 2.9/fonts/type1/public/nanumtype1/nanummjmb9.pfb><C:/Program Files/MiKTeX
+ 2.9/fonts/type1/public/nanumtype1/nanummjmba.pfb><C:/Program Files/MiKTeX 2.9/
+fonts/type1/public/nanumtype1/nanummjmbb.pfb><C:/Program Files/MiKTeX 2.9/fonts
+/type1/public/nanumtype1/nanummjmbc.pfb><C:/Program Files/MiKTeX 2.9/fonts/type
+1/public/nanumtype1/nanummjmbd.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/pub
+lic/nanumtype1/nanummjmbe.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/n
+anumtype1/nanummjmbf.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/nanumt
+ype1/nanummjmc0.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/nanumtype1/
+nanummjmc1.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/nanumtype1/nanum
+mjmc2.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/nanumtype1/nanummjmc3
+.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/nanumtype1/nanummjmc4.pfb>
+<C:/Program Files/MiKTeX 2.9/fonts/type1/public/nanumtype1/nanummjmc5.pfb><C:/P
+rogram Files/MiKTeX 2.9/fonts/type1/public/nanumtype1/nanummjmc6.pfb><C:/Progra
+m Files/MiKTeX 2.9/fonts/type1/public/nanumtype1/nanummjmc7.pfb><C:/Program Fil
+es/MiKTeX 2.9/fonts/type1/public/nanumtype1/nanummjmc8.pfb><C:/Program Files/Mi
+KTeX 2.9/fonts/type1/public/nanumtype1/nanummjmc9.pfb><C:/Program Files/MiKTeX 
+2.9/fonts/type1/public/nanumtype1/nanummjmcc.pfb><C:/Program Files/MiKTeX 2.9/f
+onts/type1/public/nanumtype1/nanummjmcd.pfb><C:/Program Files/MiKTeX 2.9/fonts/
+type1/public/nanumtype1/nanummjmce.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1
+/public/nanumtype1/nanummjmcf.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/publ
+ic/nanumtype1/nanummjmd0.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/na
+numtype1/nanummjmd1.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/nanumty
+pe1/nanummjmd2.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/nanumtype1/n
+anummjmd3.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/nanumtype1/nanumm
+jmd4.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/nanumtype1/nanummjmd5.
+pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/nanumtype1/nanummjmd6.pfb><
+C:/Program Files/MiKTeX 2.9/fonts/type1/public/nanumtype1/nanummjmd7.pfb>
+Output written on main.pdf (9 pages, 2741318 bytes).
 PDF statistics:
- 318 PDF objects out of 1000 (max. 8388607)
+ 353 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
