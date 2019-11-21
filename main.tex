@@ -6,14 +6,20 @@
 \usepackage{amssymb}
 \usepackage{graphicx}
 \usepackage{kotex}
-
-\usepackage{tascmac}
-
+\usepackage{algorithm}
+\usepackage[noend]{algpseudocode}
+%\usepackage{tascmac}
+\usepackage{pifont}
 \author{Rojiku, OtakoidTony, Park Hyun}
 \title{Messenger Bot Tutorial}
 \usepackage{minted}
 \usepackage[onehalfspacing]{setspace}
 \setstretch{1.5}
+\usepackage{l3backend}
+
+
+\usepackage{fontspec}
+\setmainfont{NanumMyeongjo}
 
 \usepackage{listings}
 
@@ -230,11 +236,11 @@ function response(room, msg, sender, isGroupChat, replier, ImageDB, packageName,
 \\
 \\
 \\
-\begin{screen}
+%\begin{screen}
 혹시나 한시라도 빨리 챗봇을 만들어 실행시켜보고 싶은 독자를 위해 실행하는 방법을 적어보자면,
 메인화면에서 해당 스크립트에 토글 스위치를 누르고 메인화면 상단에 있는 토글 스위치를 눌러
 활성화하면 해당 스크립트를 활성화할 수 있다. 단, 메신저를 사용 중일 때는 자동응답을 할 수 없다.
-\end{screen}
+%\end{screen}
 
 \chapter{}
 
@@ -305,7 +311,7 @@ function response(room, msg, sender, isGroupChat, replier, ImageDB, packageName,
 라고 보냈다고 가정하자. 그러면 $\texttt{msg = '안녕하세요'}$일 것이다. 이제 계속해서 $\texttt{response()}$내부에 선언된
 변수 $\texttt{probability}$에 대해서 살펴보면 $\texttt{probability = java.lang.Math.random() * 100}$ 이다.
 이 때, $\texttt{java.lang.Math.random()}$의 값이 0.26886278881818315가 나왔다고 하자. 그러면
-이 때는(왜냐하면 random()은 매 호출시마다 값이 바뀌기 때문이다.) $\texttt{probability}$의 값은
+이 때는(왜냐하면 $\texttt{random()}$은 매 호출시마다 값이 바뀌기 때문이다.) $\texttt{probability}$의 값은
 대략 26.xx일 것이다. 따라서 $\texttt{probability <= 70}$의 값은 $\texttt{true}$이며 그러므로 다음 절차를 밟게 될 것이다.
 \begin{lstlisting}[language=JavaScript,escapeinside=@@]
 if (msg in msgDict){
@@ -314,7 +320,8 @@ if (msg in msgDict){
 \end{lstlisting}
 이제 $\texttt{msg \textcolor{blue}{in} msgDict}$의 값을 알아보자면, 결론적으로는 $\texttt{true}$이다.
 그 이유는 앞에서 선언한 $\texttt{msgDict}$에 $\texttt{'안녕하세요'}$ 라는 값이 존재하기 때문이다.
-마찬가지로 msg='냥!' 이었으면, 이 때도 동일하게 true이다. 반대로 msg='안녕' 인 경우에 $\texttt{msg \textcolor{blue}{in} msgDict}$의 값은 false이다.
+마찬가지로 $\texttt{msg}$='냥!' 이었으면, 이 때도 동일하게 $\texttt{true}$이다. 반대로 $\texttt{msg}$='안녕' 인 경우에
+$\texttt{msg \textcolor{blue}{in} msgDict}$의 값은 $\texttt{false}$이다.
 \begin{lstlisting}[language=JavaScript,escapeinside=@@, caption={$\texttt{msgDict}$}]
 var msgDict = {
     @\textbf{'안녕하세요'}@: [
@@ -337,7 +344,7 @@ var msgDict = {
 \begin{lstlisting}[language=JavaScript,escapeinside=@@]
 replier.reply(randomItem(msgDict[msg]));
 \end{lstlisting}
-msg='안녕하세요' 이므로 $\texttt{msgDict}$=$\texttt{msgDict}$['안녕하세요']이라 할 수 있다.
+$\texttt{msg}$='안녕하세요' 이므로 $\texttt{msgDict[msg]}=\texttt{msgDict}$['안녕하세요']이라 할 수 있다.
 따라서 $\texttt{msgDict[msg]}$의 값은 크기가 3인 배열, ["안녕하세여$\sim$!", "어서와여$\sim$!", "안녕$\sim$ 이에여$\sim$!"]
 이다.
 그렇다면 도대체 $\texttt{randomItem(msgDict[msg])}$의 값이 무엇일까? 다시 위에서 정의했던 $\texttt{randomItem()}$을 살펴보자.
@@ -358,5 +365,110 @@ $\texttt{randomItem(array)}$를 살펴보면, $\texttt{array}$의 원소 중 \te
 하나일 것이며, 그 값 또한 매 호출시마다 바뀔 것이다. 물론, 이 때도 $\texttt{msgDict[msg]}$의 원소 중 하나이다. 본 스크립트는 이제
 어느정도 살펴본 것 같으니 여기서 Random Replication 섹션를 마치도록 하겠다.
 \section{Calculator}
-이번에는 \texttt{eval()}함수를 이용하여 계산기를 만들어 보고자 한다.
+이번에는 \texttt{eval()}함수를 이용하여 계산기를 만들어 보고자 한다. 계산기 프로그램을 구현시 계산식을 처리하는 알고리즘에 대해서
+숙지를 해야 정석이나, 이 섹션에서는 \texttt{eval()}를 이용하여 간단히 구현할 것이다. 다음과 같이 작성해보자.
+\begin{lstlisting}[language=JavaScript,escapeinside=@@]
+function response(room, msg, sender, isGroupChat, replier, ImageDB, packageName, threadId){
+    replier.reply(eval(msg));
+}
+\end{lstlisting}
+이것만으로도 계산기 챗봇을 구현한 것이다. 다만, 매우 위험한 것 뿐이다. 발신자가 위험한 것이 아니라,
+개발자, 즉 독자가 위험하다는 것이다! 그 이유는 \texttt{eval()}에 있다. \texttt{eval()}는 매우 편리한 함수이자,
+매우 치명적인 독약과도 같은, 양날의 검이라 할 수 있다.
+\texttt{eval()}는 매개변수를 실행하여 나온 값을 내보낸다. 예를 들어, 매개변수로 3+6을 넣으면 9가 나오는 매우 편리한 함수이다.
+겨우 사칙연산? 아니다. Java 내장 함수도 사용할 수 있다! 그 뿐 만이 아닌 무엇이 됬든지간에 실행을 할 수 있는 매우 무시무시한 함수이다.
+이 때문에 eval은 evil이라는 말도 나올 정도이다. (갑자기 tiny evil이 생각나는 것은 왜일지...) 아무튼
+evil... 아니 \texttt{eval()}는 사용할 때 매우 조심해야 하기에 안전하게 \texttt{eval()}를 사용해야 한다.
+본 섹션에서는 안전하게 \texttt{eval()}를 사용하는 법도 또한 매우 간단한 알고리즘을 통해 구현할 것이다.
+어떻게 하면 발신자가 자바함수를 사용하지 못하게 할 수 있을까? 이는 다음과 같은 알고리즘을 통해 구현할 수 있다.
+\begin{algorithm}
+        \caption{Using Whitelist}\label{euclid}
+        \begin{algorithmic}[1]
+            \Procedure{isFine}{sentence}    \Comment{If sentence is consisted with Whitelist then return true.}
+            \State Whitelist $\gets $ $\{\text{Allowed Words}\}$
+            \For{$i\in$ Whitelist}  \Comment{Loops through each word of whitelist}
+                \State sentence $\gets$ sentence.replaceAll(i, Blank)
+            \EndFor
+            \If{$\text{sentence}=\text{Blank}$}
+            	\State \textbf{return True}
+            \Else
+            	\State \textbf{return False}
+            \EndIf
+            \EndProcedure
+        \end{algorithmic}
+\end{algorithm}\\
+위 알고리즘을 스크립트에 적용해보면 다음과 같다.
+\begin{lstlisting}[language=JavaScript,escapeinside=@@]
+String.prototype.replaceAll = function(org, dest) {
+    return this.split(org).join(dest);
+}
+
+function response(room, msg, sender, isGroupChat, replier, ImageDB, packageName, threadId) {
+    if (msg.charAt(0) == "@계@" && msg.charAt(1) == "@산@") {
+        var input = msg.split(" ", 2)[1];
+        var test = input;
+        test = test.replace(/ /gi, "");
+        test = test.replace(/[0-9]/g, "");
+        var i = 0;
+        var WhiteList = new Array("\(", "\)", "+", "-", "*", "/");
+        while (i<=WhiteList.length){
+            test = test.replaceAll(WhiteList[i], '');
+            i = i+1;
+        }
+        if (test==""){
+            replier.reply(eval(input));
+        }
+    }
+}
+\end{lstlisting}
+글로 풀어서 설명하자면, 저자가 사용한 안전하게 \texttt{eval()}사용하는 방법은 이렇다.\\
+\\
+만약, 입력값이 화이트리스트의 요소들로만 구성된 문자열이라면,
+다시말해 여기서는 숫자와 사칙연산자 및 소괄호들로 이루어진 문자열이라면,
+입력값에서 숫자와 사칙연산자 및 소괄호들을 모두 제거하면 입력값은 ''이 될 것이다. 따라서
+입력값에서 화이트리스트의 요소들에 해당하는 문자열들을 전부 삭제해 ''가 된 문자열들만
+\texttt{eval()}를 이용해 계산하면 사용자가 자바함수를 호출하는 것을 막을 수 있을 것이다.\\
+\\
+간단한 계산기 챗봇의 구현은 여기서 마치고 잠깐 다른 말 좀 하고자 한다.
+다른 것은 아니고 혹시나 독자 중 아직 고등교육을 이수하지 않았거나 이수 중인 독자가 있다면,
+그 중에서도 이과생인 경우에는 \texttt{sin()}함수를 구현해 위의 간단한 계산기 챗봇을 한 단계
+수준을 높여보는 것도 도움이 될 것이라 생각한다. 비록 고등교육이 아니더라도 학생인 경우에
+학교에서 습득한 내용을 챗봇으로 구현해보는 것은 어떨까?
+하고자 한 말은 여기까지이다. 다음 섹션에서는 단계를 높여 간단한 미니게임 챗봇을 만들어보고자 한다.
+\section{Slot Machine}
+미니게임 챗봇을 만들고 플레이어가 활동한 데이터를 기록하기 위해서는 Android 라이브러리를
+이용할 필요가 있다. 물론, javascript에서는 JAVA 라이브러리나 Android 라이브러리를 사용할 수 없다.
+그러나 이미 눈치를 챘을 독자들도 많겠지만, 챗봇을 만들 때 사용하는 javascript는 조금 특수한 케이스인지라
+Android 개발시 사용되는 API가 사용가능하다! 따라서, 챗봇을 작성할 때에도 Android Package를 개발하는 것처럼
+Android 라이브러리를 사용할 수 있다.
+우선, 데이터를 기록할 필요가 있으니 플레이어가 활동한 데이터를 독자의 휴대폰 내장 메모리에 접근하는 함수를 작성하자.
+\begin{lstlisting}[language=JavaScript,escapeinside=@@]
+function save(folderName, fileName, str) {
+    var c = new java.io.File(sdcard + "/" + folderName + "/" + fileName);
+    var d = new java.io.FileOutputStream(c);
+    var e = new java.lang.String(str);
+    d.write(e.getBytes());
+    d.close();
+}
+
+function read(folderName, fileName) {
+    var b = new java.io.File(sdcard + "/" + folderName + "/" + fileName);
+    if (!(b.exists())) return null;
+    var c = new java.io.FileInputStream(b);
+    var d = new java.io.InputStreamReader(c);
+    var e = new java.io.BufferedReader(d);
+    var f = e.readLine();
+    var g = "";
+    while ((g = e.readLine()) != null) {
+        f += "\n" + g;
+    }
+    c.close();
+    d.close();
+    e.close();
+    return f.toString();
+}
+\end{lstlisting}
+도대체 내가 자바스크립트를 하는건지... 자바를 하는건지... 이쯤되면 확장명만 .js인게 아닌가 싶기도 하지만,
+쓸데없는 소리는 여기까지 하고. 아니, 애당초에 자바스크립트와 자바는 이름만 비슷할 뿐, 엄연히 다른 프로그래밍 언어이다!
+%\ding{"7️⃣", "🍇", "🍒", "🍈", "🍑"}
 \end{document}
