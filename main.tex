@@ -255,6 +255,7 @@ function response(room, msg, sender, isGroupChat, replier, ImageDB, packageName,
 \\
 \\
 \\
+\\
 %\begin{screen}
 혹시나 한시라도 빨리 챗봇을 만들어 실행시켜보고 싶은 독자를 위해 실행하는 방법을 적어보자면,
 메인화면에서 해당 스크립트에 토글 스위치를 누르고 메인화면 상단에 있는 토글 스위치를 눌러
@@ -379,8 +380,8 @@ function randomItem(a) {
        &=& \max\{n\in \mathbb {Z} \colon n\leq x\} &=& \text{int}(x)
 \end{matrix}
 \]
-$\texttt{randomItem(array)}$를 살펴보면, $\texttt{array}$의 원소 중 \texttt{floor(ra ndom()$\times$ array.length]}+1번째 원소를
-내보낸다는 것을 알 수 있다. 따라서 $\texttt{randomItem(msgDict[msg])}$의 값은 $\texttt{msgDict[msg]}$의 원소 중
+$\texttt{randomItem(array)}$를 살펴보면, $\texttt{array}$의 원소 중 \texttt{floor(ra ndom()$\times$array.length]}+1번째 원소를
+내보낸다는 것을 알 수 있다. 따라서 $\texttt{randomItem(msgDict[msg])}$의 값은 \texttt{msgDic t[msg]}의 원소 중
 하나일 것이며, 그 값 또한 매 호출시마다 바뀔 것이다. 물론, 이 때도 $\texttt{msgDict[msg]}$의 원소 중 하나이다. 본 스크립트는 이제
 어느정도 살펴본 것 같으니 여기서 Random Replication 섹션를 마치도록 하겠다.
 

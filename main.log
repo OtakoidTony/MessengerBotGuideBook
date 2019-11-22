@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7250 64-bit) (preloaded format=pdflatex 2019.11.22)  22 NOV 2019 12:31
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7250 64-bit) (preloaded format=pdflatex 2019.11.22)  22 NOV 2019 13:00
 entering extended mode
 **./main.tex
 (main.tex
@@ -925,12 +925,17 @@ LaTeX Font Info:    Trying to load font information for TS1+cmtt on input line
  ("C:\Program Files\MiKTeX 2.9\tex/latex/base\ts1cmtt.fd"
 File: ts1cmtt.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 ) [8] [9]
-Underfull \hbox (badness 10000) in paragraph at lines 251--263
+Underfull \hbox (badness 10000) in paragraph at lines 251--264
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 251--263
+Underfull \hbox (badness 10000) in paragraph at lines 251--264
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 251--264
 
  []
 
@@ -939,7 +944,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 251--263
 ]
 Chapter 3.
 [13] [14] [15]
-Overfull \hbox (4.31856pt too wide) in paragraph at lines 340--344
+Overfull \hbox (4.31856pt too wide) in paragraph at lines 341--345
 \LUC/nanummj/m/n/10/c7 t\LUC/nanummj/m/n/10/c8  $[]$\LUC/nanummj/m/n/10/c7 X \
 LUC/nanummj/m/n/10/ac \LUC/nanummj/m/n/10/c7 D \LUC/nanummj/m/n/10/c5 LD\LUC/n
 anummj/m/n/10/bc Ù\LUC/nanummj/m/n/10/c7 ê\LUC/nanummj/m/n/10/ba t\OT1/cmr/m/n/
@@ -948,7 +953,7 @@ UC/nanummj/m/n/10/c7 <\LUC/nanummj/m/n/10/b8 \\LUC/nanummj/m/n/10/b2 î $[]$
  []
 
 [16] [17]
-Overfull \hbox (0.81812pt too wide) in paragraph at lines 381--386
+Overfull \hbox (0.81812pt too wide) in paragraph at lines 382--387
 $[]$\LUC/nanummj/m/n/10/b9 | \LUC/nanummj/m/n/10/c0 ¥\LUC/nanummj/m/n/10/d3 ¥\L
 UC/nanummj/m/n/10/bc Ù\LUC/nanummj/m/n/10/ba t\OT1/cmr/m/n/10 , $[]$\LUC/nanumm
 j/m/n/10/c7 X \LUC/nanummj/m/n/10/c6 –\LUC/nanummj/m/n/10/c1 å \LUC/nanummj/m/n
@@ -956,29 +961,20 @@ j/m/n/10/c7 X \LUC/nanummj/m/n/10/c6 –\LUC/nanummj/m/n/10/c1 å \LUC/nanummj/m/n
  []
 
 
-Overfull \hbox (1.87302pt too wide) in paragraph at lines 381--386
-\OT1/cmtt/m/n/10 ndom()$\OMS/cmsy/m/n/10 $ \OT1/cmtt/m/n/10 array.length]\OT1/
-cmr/m/n/10 +1\LUC/nanummj/m/n/10/bc à\LUC/nanummj/m/n/10/c9 ¯ \LUC/nanummj/m/n/
-10/c6 –\LUC/nanummj/m/n/10/c1 å\LUC/nanummj/m/n/10/b9 | \LUC/nanummj/m/n/10/b0 
-¥\LUC/nanummj/m/n/10/bc Ù\LUC/nanummj/m/n/10/b0 ∏\LUC/nanummj/m/n/10/b2 ‰î \LUC
-/nanummj/m/n/10/ac É\LUC/nanummj/m/n/10/c7 D \LUC/nanummj/m/n/10/c5 L
- []
-
-
-Overfull \hbox (32.32336pt too wide) in paragraph at lines 381--386
+Overfull \hbox (0.82364pt too wide) in paragraph at lines 382--387
 \LUC/nanummj/m/n/10/c2  \LUC/nanummj/m/n/10/c7 à\LUC/nanummj/m/n/10/b2 ‰\OT1/c
 mr/m/n/10 . \LUC/nanummj/m/n/10/b5 0\LUC/nanummj/m/n/10/b7 |\LUC/nanummj/m/n/10
 /c1  $[]$\LUC/nanummj/m/n/10/c7 X \LUC/nanummj/m/n/10/ac \LUC/nanummj/m/n/10/
-c7 @ $[]$
+c7 @ \OT1/cmtt/m/n/10 msgDic
  []
 
 [18] [19] [20]
-Underfull \hbox (badness 10000) in paragraph at lines 444--458
+Underfull \hbox (badness 10000) in paragraph at lines 445--459
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 444--458
+Underfull \hbox (badness 10000) in paragraph at lines 445--459
 
  []
 
@@ -1073,7 +1069,7 @@ s/MiKTeX 2.9/fonts/type1/public/nanumtype1/nanummjmd4.pfb><C:/Program Files/MiK
 TeX 2.9/fonts/type1/public/nanumtype1/nanummjmd5.pfb><C:/Program Files/MiKTeX 2
 .9/fonts/type1/public/nanumtype1/nanummjmd6.pfb><C:/Program Files/MiKTeX 2.9/fo
 nts/type1/public/nanumtype1/nanummjmd7.pfb>
-Output written on main.pdf (23 pages, 2877840 bytes).
+Output written on main.pdf (23 pages, 2877888 bytes).
 PDF statistics:
  409 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
