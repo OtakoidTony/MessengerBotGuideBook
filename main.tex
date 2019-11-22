@@ -1,5 +1,5 @@
 %!TEX encoding = UTF-8 Unicode
-\documentclass[10pt,a4paper,final]{book}
+\documentclass[10pt,b6paper,final]{book}
 \usepackage[scale=0.75,twoside,bindingoffset=5mm]{geometry}
 \usepackage{amsmath}
 \usepackage{amsfonts}
@@ -15,11 +15,15 @@
 \usepackage{minted}
 \usepackage[onehalfspacing]{setspace}
 \setstretch{1.5}
-\usepackage{l3backend}
+
+\usepackage{xparse}
 
 
-\usepackage{fontspec}
-\setmainfont{NanumMyeongjo}
+%\usepackage{l3backend}
+
+
+%\usepackage{fontspec}
+%\setmainfont{NanumMyeongjo}
 
 \usepackage{listings}
 
@@ -63,15 +67,30 @@
    showtabs=false,
    captionpos=b
 }
+\ExplSyntaxOn
+\NewDocumentCommand{\commtt}{m}
+ {
+  % save the input in a variable
+  \tl_set:Nn \l_kessels_unmarked_letters_tl { #1 }
+  % replace spaces with \textvisiblespace
+  \tl_replace_all:Nnn \l_kessels_unmarked_letters_tl { ~ } { \text{ } }
+  % map the input surrounding each item by parentheses
+  \tl_map_inline:Nn \l_kessels_unmarked_letters_tl { \texttt{##1}\text{} }
+ }
+\tl_new:N \l_kessels_unmarked_letters_tl
+\ExplSyntaxOff
 
 \begin{document}
 \maketitle
-Tutorials based on AutoReplyBot using javascript.
+Tutorials based on AutoReplyBot using javascript.\\
+
+
+
 \chapter{}
 \section{Setup}
 챗봇을 작성하기에 앞서 구글 플레이스토어에서 아래 나열한 어플리케이션을 모두 설치를 하여라.
 만약에 휴대폰 운영체제가 Android계열이 아닌 경우에는 컴퓨터를 이용해 Android을 실행하여 
-챗봇을 구현할 수 있다. 컴퓨터가 만일 Odroid를 사용중이라면 스마트폰처럼 사용하여도 문제는
+챗봇을 구현할 수 있다. 컴퓨터가 만일 Odroid\footnote{Odroid : Single Board Computer 중 하나로 Android OS 가 주로 사용되며 이 때문에 Android 관련 개발시 주로 사용되는 컴퓨터이다.} 를 사용중이라면 스마트폰처럼 사용하여도 문제는
 없다.
 
 \setstretch{1}
@@ -254,18 +273,18 @@ function response(room, msg, sender, isGroupChat, replier, ImageDB, packageName,
 보고 흥분하는 변태일 가능성도 있긴 하다. 어찌됬든, 이상한 소리는 여기까지하고 하던 말을 이어가자면
 Math라는 라이브러리에는 당연히 수학에 관한 함수나 여러 기능이 포함되어 있는데 이를 이용하여
 챗봇이 랜덤하게 답장을 하도록 구현할 것이다.
-우선 $\texttt{java.lang.Math.random()}$라는 함수는 0부터 1사이에서의 랜덤한 수를 제공한다.
+우선 \texttt{Math.random()}라는 함수는 0부터 1사이에서의 랜덤한 수를 제공한다.
 이 기능은 공학용 계산기에서의 $\texttt{Ran}\sharp$ 과 동일하다.
 이를 이용하여 1차원 배열에서 랜덤한 성분을 뽑아내는 함수를 다음과 같이 구현할 수 있다.
 \begin{lstlisting}[language=JavaScript,escapeinside=~~, caption={$\texttt{randomItem(array)}$}]
 function randomItem(a) {
-    return a[java.lang.Math.floor(java.lang.Math.random() * a.length)];
+    return a[Math.floor(Math.random() * a.length)];
 }
 \end{lstlisting}
 이제 다음과 같이 작성하자.
 \begin{lstlisting}[language=JavaScript,escapeinside=@@, caption={RandomReply.js}]
 function randomItem(a) {
-    return a[java.lang.Math.floor(java.lang.Math.random() * a.length)];
+    return a[Math.floor(Math.random() * a.length)];
 }
 var msgDict = {
     @'안녕하세요'@: [
@@ -285,7 +304,7 @@ var msgDict = {
 };
 
 function response(room, msg, sender, isGroupChat, replier, ImageDB, packageName, threadId){
-    var probability = java.lang.Math.random() * 100;
+    var probability = Math.random() * 100;
     if (probability <= 70){
         if (msg in msgDict){
             replier.reply(randomItem(msgDict[msg]));
@@ -299,7 +318,7 @@ $\texttt{msgDict}$는 객체(혹은 딕셔너리)이므로 $\texttt{msgDict['박
 ["어휴;;;", "증! 거! 확! 보!"]가 될 것이다. 이것만으로는 설명이 매우 부족한 관계로 위 스크립트를 분석해보자.
 \begin{lstlisting}[language=JavaScript,escapeinside=@@]
 function response(room, msg, sender, isGroupChat, replier, ImageDB, packageName, threadId){
-    var probability = java.lang.Math.random() * 100;
+    var probability = Math.random() * 100;
     if (probability <= 70){
         if (msg in msgDict){
             replier.reply(randomItem(msgDict[msg]));
@@ -309,10 +328,10 @@ function response(room, msg, sender, isGroupChat, replier, ImageDB, packageName,
 \end{lstlisting}
 무엇이 되었든간에 챗봇에 있어서 메인이 되는 함수는 위 함수, $\texttt{response()}$일 것이다. 우선, 발신자가 '안녕하세요'
 라고 보냈다고 가정하자. 그러면 $\texttt{msg = '안녕하세요'}$일 것이다. 이제 계속해서 $\texttt{response()}$내부에 선언된
-변수 $\texttt{probability}$에 대해서 살펴보면 $\texttt{probability = java.lang.Math.random() * 100}$ 이다.
-이 때, $\texttt{java.lang.Math.random()}$의 값이 0.26886278881818315가 나왔다고 하자. 그러면
+변수 $\texttt{probability}$에 대해서 살펴보면 \commtt{probability=Math.random()*100} 이다.
+이 때, $\texttt{Math.random()}$의 값이 \commtt{0.26886278881818315}가 나왔다고 하자. 그러면
 이 때는(왜냐하면 $\texttt{random()}$은 매 호출시마다 값이 바뀌기 때문이다.) $\texttt{probability}$의 값은
-대략 26.xx일 것이다. 따라서 $\texttt{probability <= 70}$의 값은 $\texttt{true}$이며 그러므로 다음 절차를 밟게 될 것이다.
+대략 26.xx일 것이다. 따라서 \commtt{probability <= 70}의 값은 $\texttt{true}$이며 그러므로 다음 절차를 밟게 될 것이다.
 \begin{lstlisting}[language=JavaScript,escapeinside=@@]
 if (msg in msgDict){
     replier.reply(randomItem(msgDict[msg]));
@@ -347,23 +366,24 @@ replier.reply(randomItem(msgDict[msg]));
 $\texttt{msg}$='안녕하세요' 이므로 $\texttt{msgDict[msg]}=\texttt{msgDict}$['안녕하세요']이라 할 수 있다.
 따라서 $\texttt{msgDict[msg]}$의 값은 크기가 3인 배열, ["안녕하세여$\sim$!", "어서와여$\sim$!", "안녕$\sim$ 이에여$\sim$!"]
 이다.
-그렇다면 도대체 $\texttt{randomItem(msgDict[msg])}$의 값이 무엇일까? 다시 위에서 정의했던 $\texttt{randomItem()}$을 살펴보자.
+그렇다면 도대체 $\texttt{randomItem(msgDict[msg])}$의 값이 무엇일까? 다시 위에서 정의했던 \commtt{randomItem()}을 살펴보자.
 \begin{lstlisting}[language=JavaScript,escapeinside=~~, caption={$\texttt{randomItem(array)}$}]
 function randomItem(a) {
-    return a[java.lang.Math.floor(java.lang.Math.random() * a.length)];
+    return a[Math.floor(Math.random() * a.length)];
 }
 \end{lstlisting}
-혹시나 $\texttt{java.lang.Math.floor(x)}$에 대해 궁금할 독자를 위해 설명하자면 다음과 같다.
+혹시나 $\texttt{Math.floor(x)}$에 대해 궁금할 독자를 위해 설명하자면 다음과 같다.
 \[
 \begin{matrix}
-\texttt{java.lang.Math.floor(}x\texttt{)} &=& \lfloor x\rfloor &=& [x]\\
+\texttt{Math.floor(}x\texttt{)} &=& \lfloor x\rfloor &=& [x]\\
        &=& \max\{n\in \mathbb {Z} \colon n\leq x\} &=& \text{int}(x)
 \end{matrix}
 \]
-$\texttt{randomItem(array)}$를 살펴보면, $\texttt{array}$의 원소 중 \texttt{floor[random()$\times$a.length]+1}번째 원소를
+$\texttt{randomItem(array)}$를 살펴보면, $\texttt{array}$의 원소 중 \texttt{floor(ra ndom()$\times$ array.length]}+1번째 원소를
 내보낸다는 것을 알 수 있다. 따라서 $\texttt{randomItem(msgDict[msg])}$의 값은 $\texttt{msgDict[msg]}$의 원소 중
 하나일 것이며, 그 값 또한 매 호출시마다 바뀔 것이다. 물론, 이 때도 $\texttt{msgDict[msg]}$의 원소 중 하나이다. 본 스크립트는 이제
 어느정도 살펴본 것 같으니 여기서 Random Replication 섹션를 마치도록 하겠다.
+
 \section{Calculator}
 이번에는 \texttt{eval()}함수를 이용하여 계산기를 만들어 보고자 한다. 계산기 프로그램을 구현시 계산식을 처리하는 알고리즘에 대해서
 숙지를 해야 정석이나, 이 섹션에서는 \texttt{eval()}를 이용하여 간단히 구현할 것이다. 다음과 같이 작성해보자.
@@ -376,17 +396,18 @@ function response(room, msg, sender, isGroupChat, replier, ImageDB, packageName,
 개발자, 즉 독자가 위험하다는 것이다! 그 이유는 \texttt{eval()}에 있다. \texttt{eval()}는 매우 편리한 함수이자,
 매우 치명적인 독약과도 같은, 양날의 검이라 할 수 있다.
 \texttt{eval()}는 매개변수를 실행하여 나온 값을 내보낸다. 예를 들어, 매개변수로 3+6을 넣으면 9가 나오는 매우 편리한 함수이다.
-겨우 사칙연산? 아니다. Java 내장 함수도 사용할 수 있다! 그 뿐 만이 아닌 무엇이 됬든지간에 실행을 할 수 있는 매우 무시무시한 함수이다.
+겨우 사칙연산? 아니다. 내장 함수도 사용할 수 있다! 그 뿐 만이 아닌 무엇이 됬든지간에 실행을 할 수 있는 매우 무시무시한 함수이다.
 이 때문에 eval은 evil이라는 말도 나올 정도이다. (갑자기 tiny evil이 생각나는 것은 왜일지...) 아무튼
 evil... 아니 \texttt{eval()}는 사용할 때 매우 조심해야 하기에 안전하게 \texttt{eval()}를 사용해야 한다.
 본 섹션에서는 안전하게 \texttt{eval()}를 사용하는 법도 또한 매우 간단한 알고리즘을 통해 구현할 것이다.
-어떻게 하면 발신자가 자바함수를 사용하지 못하게 할 수 있을까? 이는 다음과 같은 알고리즘을 통해 구현할 수 있다.
+어떻게 하면 발신자가 함수를 사용하지 못하게 할 수 있을까? 이는 다음과 같은 알고리즘을 통해 구현할 수 있다.
+\newpage
 \begin{algorithm}
         \caption{Using Whitelist}\label{euclid}
         \begin{algorithmic}[1]
-            \Procedure{isFine}{sentence}    \Comment{If sentence is consisted with Whitelist then return true.}
+            \Procedure{isFine}{sentence}    %\Comment{If sentence is consisted with Whitelist then return true.}
             \State Whitelist $\gets $ $\{\text{Allowed Words}\}$
-            \For{$i\in$ Whitelist}  \Comment{Loops through each word of whitelist}
+            \For{$i\in$ Whitelist}  %\Comment{Loops through each word of whitelist}
                 \State sentence $\gets$ sentence.replaceAll(i, Blank)
             \EndFor
             \If{$\text{sentence}=\text{Blank}$}
@@ -395,16 +416,15 @@ evil... 아니 \texttt{eval()}는 사용할 때 매우 조심해야 하기에 �
             	\State \textbf{return False}
             \EndIf
             \EndProcedure
-        \end{algorithmic}
-\end{algorithm}\\
-위 알고리즘을 스크립트에 적용해보면 다음과 같다.
+        \end{algorithmic}\end{algorithm}위 알고리즘을 스크립트에 적용해보면 다음과 같다.
 \begin{lstlisting}[language=JavaScript,escapeinside=@@]
 String.prototype.replaceAll = function(org, dest) {
     return this.split(org).join(dest);
 }
 
 function response(room, msg, sender, isGroupChat, replier, ImageDB, packageName, threadId) {
-    if (msg.charAt(0) == "@계@" && msg.charAt(1) == "@산@") {
+    if (   msg.charAt(0) == "@계@" 
+        && msg.charAt(1) == "@산@") {
         var input = msg.split(" ", 2)[1];
         var test = input;
         test = test.replace(/ /gi, "");
@@ -470,5 +490,5 @@ function read(folderName, fileName) {
 \end{lstlisting}
 도대체 내가 자바스크립트를 하는건지... 자바를 하는건지... 이쯤되면 확장명만 .js인게 아닌가 싶기도 하지만,
 쓸데없는 소리는 여기까지 하고. 아니, 애당초에 자바스크립트와 자바는 이름만 비슷할 뿐, 엄연히 다른 프로그래밍 언어이다!
-%\ding{"7️⃣", "🍇", "🍒", "🍈", "🍑"}
+이제, 플레이어의 활동을 저장하고 읽는 것도 가능해졌으니, 게임을 구현할 차례다!
 \end{document}
