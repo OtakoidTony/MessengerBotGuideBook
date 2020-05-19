@@ -1,0 +1,11 @@
+\contentsline {chapter}{\numberline {1}시작하기}{5}%
+\contentsline {section}{\numberline {1.1}설치 및 기본설정}{5}%
+\contentsline {section}{\numberline {1.2}첫 봇 작성}{7}%
+\contentsline {section}{\numberline {1.3}Hello World!}{8}%
+\contentsline {chapter}{\numberline {2}}{11}%
+\contentsline {section}{\numberline {2.1}Specifical Replication}{11}%
+\contentsline {section}{\numberline {2.2}Long Scripts Problem}{12}%
+\contentsline {chapter}{\numberline {3}}{17}%
+\contentsline {section}{\numberline {3.1}Random Replication}{17}%
+\contentsline {section}{\numberline {3.2}Calculator}{23}%
+\contentsline {section}{\numberline {3.3}Slot Machine}{27}%

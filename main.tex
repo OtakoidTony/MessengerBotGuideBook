@@ -1,4 +1,3 @@
-%!TEX encoding = UTF-8 Unicode
 \documentclass[10pt,b6paper,final]{book}
 \usepackage[scale=0.75,twoside,bindingoffset=5mm]{geometry}
 \usepackage{amsmath}
@@ -48,19 +47,19 @@
 }
 
 \lstset{
-   language=JavaScript,
-   backgroundcolor=\color{lightgray},
-   extendedchars=true,
-   basicstyle=\footnotesize\ttfamily\setstretch{1},
-   showstringspaces=false,
-   showspaces=false,
-   numbers=left,
-   numberstyle=\footnotesize,
-   numbersep=9pt,
-   tabsize=2,
-   breaklines=true,
-   showtabs=false,
-   captionpos=b
+	language=JavaScript,
+	backgroundcolor=\color{lightgray},
+	extendedchars=true,
+	basicstyle=\footnotesize\ttfamily,
+	showstringspaces=false,
+	showspaces=false,
+	numbers=left,
+	numberstyle=\footnotesize,
+	numbersep=9pt,
+	tabsize=4,
+	breaklines=true,
+	showtabs=false,
+	captionpos=b
 }
 \ExplSyntaxOn
 \NewDocumentCommand{\commtt}{m}
@@ -74,65 +73,63 @@
  }
 \tl_new:N \l_kessels_unmarked_letters_tl
 \ExplSyntaxOff
+\renewcommand*\contentsname{차례}
 
+
+\usepackage{tcolorbox}
+\usepackage{fancyvrb}
 \begin{document}
 \maketitle
-Tutorials based on AutoReplyBot using javascript.\\
-
-
-
-\chapter{}
-\section{Setup}
+\tableofcontents
+\chapter{시작하기}
+\section{설치 및 기본설정}
 챗봇을 작성하기에 앞서 구글 플레이스토어에서 아래 나열한 어플리케이션을 모두 설치를 하여라.
 만약에 휴대폰 운영체제가 Android계열이 아닌 경우에는 컴퓨터를 이용해 Android을 실행하여 
 챗봇을 구현할 수 있다. 컴퓨터가 만일 Odroid\footnote{Odroid : Single Board Computer 중 하나로 Android OS 가 주로 사용되며 이 때문에 Android 관련 개발시 주로 사용되는 컴퓨터이다.} 를 사용중이라면 스마트폰처럼 사용하여도 문제는
-없다.rrrrr
-
+없다. 우선은 챗봇을 만들 때 사용할 어플 두가지를 설치해야만 한다. 아래 나열된 어플을 모두 설치해주자.
+\begin{tcolorbox}
 \setstretch{1}
-\begin{description}
-\item[MessengerBot]\hfill\\
-com.xfl.kakaotalkbot
-\item[Wear OS by Google]\hfill\\
-com.google.android.wearable.app
-\end{description}
+\textbf{메신저봇R}\\
+\texttt{com.xfl.msgbot}\\\\
+\textbf{Wear OS by Google}\\
+\texttt{com.google.android.wearable.app}
+\end{tcolorbox}
 \setstretch{1.5}
-두 어플리케이션의 관계에 대해 설명하자면 MessengerBot에서 
+두 어플리케이션의 관계에 대해 설명하자면 메신저봇R에서 
 Wear OS by Google을 이용해 메신저에 접근하는 관계라 할 수 있으리라.
 독자도 알다시피 Wear OS by Google라는 어플리케이션은 스마트폰의 알림을
 Wearable Device에 전송하는 기능과 스마트폰 대신 Wearable Device만을
 이용해 메신저에 답장을 보내는 기능이 탑재되어 있다.
-이를 이용하여 MessengerBot에서 Wear OS by Google를 이용해 자동응답을
+이를 이용하여 메신저봇R에서 Wear OS by Google를 이용해 자동응답을
 할 수 있도록 구현한 것이다. 두 어플리케이션에 관한 설명은 차후 이어서 하도록 하고,
-만약에 두 어플리케이션 모두 설치를 하였다면, 손 아이콘을 눌러 알림권한설정에서 앞에서 설치한
-MessengerBot과 Wear OS by Google를 활성화를 하여라. 이걸로 준비 작업을 마친다.
+만약에 두 어플리케이션 모두 설치를 하였다면, 알림권한설정에서 앞에서 설치한 메신저봇R과 Wear OS by Google를 활성화를 하여라. 이걸로 준비 작업을 마친다.
 
-\section{Make your script}
-준비 작업을 마친 후, 우측 하단의 십자버튼을 누르고 독자가 원하는 스크립트 이름을 정하여라.
+\section{첫 봇 작성}
+준비 작업을 마친 후, 우측 하단의 십자버튼을 누르고 독자가 원하는 봇 이름을 정하여라.
 저자의 경우 'normal'이라고 정하였다.
 아래 소스는 스크립트를 처음 작성할 때 자동으로 생성되는 스크립트이며,
 본 책에서는 여러 이유로 주석을 제거한 상태이다.
 
 \begin{lstlisting}[language=JavaScript,escapeinside=~~,caption={normal.js}]
-const scriptName="normal.js";
+const scriptName = "normal";
 
-function response(room, msg, sender, isGroupChat, replier, ImageDB, packageName, threadId){
+function response(room, msg, sender, isGroupChat, replier, imageDB, packageName) {
 
 }
 
-function onStartCompile(){
-    
+function onCreate(savedInstanceState, activity) {
+    var textView = new android.widget.TextView(activity);
+    textView.setText("Hello, World!");
+    textView.setTextColor(android.graphics.Color.DKGRAY);
+    activity.setContentView(textView);
 }
 
-function onCreate(savedInstanceState,activity) {
-    var layout=new android.widget.LinearLayout(activity);
-    layout.setOrientation(android.widget.LinearLayout.HORIZONTAL);
-    var txt=new android.widget.TextView(activity);
-    txt.setText("~\textcolor{black}{액티비티 사용 예시입니다.}~");
-    layout.addView(txt);
-    activity.setContentView(layout);
-}
+function onStart(activity) {}
+
 function onResume(activity) {}
+
 function onPause(activity) {}
+
 function onStop(activity) {}
 \end{lstlisting}
 
